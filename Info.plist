@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>姜倔倔</string>
+	<key>Builder Version</key>
+	<string>10600.3.18</string>
+	<key>CFBundleDisplayName</key>
+	<string>imdb4douban</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.ivan.imdb4douban</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict/>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>imdb.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>imdb.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>在豆瓣电影的页面上显示IMDb评分</string>
+	<key>DeveloperIdentifier</key>
+	<string>BZAVS4QL8P</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
