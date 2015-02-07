@@ -17,11 +17,12 @@ return id;
 
 function trans2readable(num){
 	if(typeof num == "string"){
-		if(!(/^[123456789]*$/.test(num))){
+		if(!(/^[0123456789]*$/.test(num))){
 			num = num.replace(",","");
 			num = num.trim();
+			alert(num);
 		}
-		if(/^[123456789]*$/.test(num)){
+		if(/^[0123456789]*$/.test(num)){
 			num = parseInt(num);
 		} else {
 			return false;
