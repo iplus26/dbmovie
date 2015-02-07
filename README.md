@@ -2,7 +2,7 @@
 
 这是豆瓣电影的一个 Safari 拓展，在电影详情页面的右侧显示更多信息。
 
-![screenshots](http://i.imgur.com/HRPynzQ.png)
+![screenshots](http://i.imgur.com/PaFfsQV.png)
 
 ## Features
 
@@ -14,7 +14,10 @@
 ## Todos
 
 * 修复电影分级信息
-* 增加更多功能，如烂番茄信息，根据电影蓝光发布时间判断是否有高清资源等等。
+* 增加更多功能
+	* 烂番茄信息
+	* 根据电影蓝光发布时间判断是否有高清资源
+	* 搜索视频（Safari 没有安装 Flash 的时候调用 Chrome 打开优酷等国内视频网站）
 
 ## Donate
 
@@ -23,3 +26,9 @@
 ## Feedback
 
 请不吝提供你的建议或是好点子 :)
+
+## History
+
+2015.02.08 美化界面
+
+2015.01.31 born
