@@ -15,6 +15,24 @@ function get_imdb_id(){
 return id;
 };
 
+function trans2readable(num){
+	if(typeof num == "string"){
+		if(!(/^[123456789]*$/.test(num))){
+			num = num.replace(",","");
+			num = num.trim();
+		}
+		if(/^[123456789]*$/.test(num)){
+			num = parseInt(num);
+		} else {
+			return false;
+		} 
+	}
+	
+	(num > 10000) && (num = (num/10000).toFixed(1) + "万");
+	
+	return num;
+}
+
 var imdb_id = get_imdb_id();
 //alert(imdb_id);
 
@@ -26,44 +44,57 @@ xhr.send(null);
 var jsonText = xhr.responseText;
 var imdbObject = JSON.parse(jsonText);
 
-var imdbDiv = document.createElement("div");
-imdbDiv.className = "gray_ad";
+var myDiv = document.createElement("div");
+myDiv.className = "gray_ad";
 
-var imdbNode1 = document.createElement("h2");
-imdbNode1.textContent = "IMDb " + imdb_id + " · · · · · ·";
-imdbDiv.appendChild(imdbNode1);
+myDiv.insertAdjacentHTML("beforeend", "<h2>更多信息 · · · · · ·</h2>");
 
-var imdbNode2 = document.createElement("p");
-imdbNode2.textContent = imdbObject.imdbRating + " (" + imdbObject.imdbVotes +" users)\n";
-imdbDiv.appendChild(imdbNode2);
+if(imdbObject.imdbRating != "N/A"){
+	myDiv.insertAdjacentHTML("beforeend",
+		"<p style='-webkit-filter: hue-rotate(90deg); filter: hue-rotate(90deg)'>" +
+			"<span class='ll bigstar" + 5 * Math.round(imdbObject.imdbRating) + "'></span>" +
+			"<strong class='ll rating_num'>" + imdbObject.imdbRating + "</strong>&nbsp;&nbsp;(" + trans2readable(imdbObject.imdbVotes) +"人评分)\n" + 
+		"</p>"
+	);
+}
 
-var imdbNode3 = document.createElement("p");
-imdbNode3.textContent = function(){
-	if(imdbObject.Rated == "R"){
-		return "分级 R - 可能是坏了, 没这么多小黄片的 :)";
-	}else if(imdbObject.Rated.toLowerCase() == "n/a" || imdbObject.Rated.toLowerCase() == "not rated"){
-		return "这货没分级 ಥ_ಥ";
-	}else
-		return "分级 "+imdbObject.Rated;
+if(imdbObject.Rated.toLowerCase() != "n/a" && imdbObject.Rated.toLowerCase() != "not rated"){
+	var ratedImg = "url of the img";
+	
+	switch(imdbObject.Rated){
+	case 'G':
+		ratedImg = 'http://i.imgur.com/s7EvKhl.png';break;
+	case 'PG-13':
+		ratedImg = 'http://i.imgur.com/fSwTQHS.png';break;
+	case 'R':
+		ratedImg = 'http://i.imgur.com/evNf1Zi.png';break;
+	default:
+		// 'PG'
+		ratedImg = 'http://i.imgur.com/0ax0D3c.png';
+	}
+	
+	myDiv.insertAdjacentHTML("beforeend",
+		"<p>" +
+		 	"<img src='" + ratedImg + "' height='20'/>" +
+		"</p>"
+	);
 	// get more information from http://en.wikipedia.org/wiki/Motion_Picture_Association_of_America_film_rating_system
-}();
-imdbDiv.appendChild(imdbNode3);
+	
+}
 
-var imdbNode4 = document.createElement("a");
-imdbNode4.textContent = "下载 · 字幕组熟肉";
-var searchEngineUrl_Google = "https://www.google.com/#q=";
-var searchEngineUrl_Baidu = "http://www.baidu.com/s?wd=";
-imdbNode4.href = encodeURI(searchEngineUrl_Google + imdbObject.Title + " " + imdbObject.Year + " HR-HDTV");
-imdbNode4.target = "_blank";
-imdbDiv.appendChild(imdbNode4);
+var searchGoogle = "https://www.google.com/#q=";
+//var searchBaidu = "http://www.baidu.com/s?wd=";
 
-var brNode = document.createElement("p");
-imdbDiv.appendChild(brNode);
+myDiv.insertAdjacentHTML("beforeend",
+	"<p>" +
+		"<a href='" + encodeURI(searchGoogle + imdbObject.Title + " " + imdbObject.Year + " HR-HDTV") + "' target='_blank'>下载 · 字幕组熟肉</a>" +
+	"</p>"
+);
 
-var imdbNode5 = document.createElement("a");
-imdbNode5.textContent = "下载 · kickass.so";
-imdbNode5.href = encodeURI("https://kickass.so/usearch/" + imdbObject.Title + " " + imdbObject.Year);
-imdbNode5.target = "_blank";
-imdbDiv.appendChild(imdbNode5);
+myDiv.insertAdjacentHTML("beforeend",
+	"<p>" + 
+		"<a href='" + encodeURI("https://kickass.so/usearch/" + imdbObject.Title + " " + imdbObject.Year) + "' target='_blank'>下载 · kickass.so</a>" +
+	"</p>"
+);
 
-node.insertBefore(imdbDiv, node.firstChild);
+node.insertBefore(myDiv, node.firstChild);

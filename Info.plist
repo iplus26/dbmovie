@@ -7,7 +7,7 @@
 	<key>Builder Version</key>
 	<string>10600.3.18</string>
 	<key>CFBundleDisplayName</key>
-	<string>imdb4douban</string>
+	<string>dbmovie</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.ivan.imdb4douban</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -33,7 +33,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>在豆瓣电影的页面上显示IMDb评分</string>
+	<string>在豆瓣电影的页面上显示IMDb评分等更多信息</string>
 	<key>DeveloperIdentifier</key>
 	<string>BZAVS4QL8P</string>
 	<key>ExtensionInfoDictionaryVersion</key>
