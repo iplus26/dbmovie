@@ -17,7 +17,6 @@
 * 增加更多功能
 	* 烂番茄信息
 	* 根据电影蓝光发布时间判断是否有高清资源
-	* 搜索视频（Safari 没有安装 Flash 的时候调用 Chrome 打开优酷等国内视频网站）
 	* 判断为国内作品则不提供搜索项
 	* 判断为剧集则提供最新一集的搜索项
 	* 更改豆瓣电影本身页面项，譬如将评分人数变为更可读的数，去除本身 IMDb 链接等
@@ -31,7 +30,10 @@
 请不吝提供你的建议或是好点子 :)
 
 ## History
+2015.02.09 哔哩哔哩在线观看，没有 Flash 用 Chrome 打开
+
+(use [lhagan](https://github.com/lhagan) / **[Open-in-Chrome](https://github.com/lhagan/Open-in-Chrome)**)
 
 2015.02.08 美化界面
 
-2015.01.31 born
+2015.01.31 born (use [OMDb API](http://www.omdbapi.com))
