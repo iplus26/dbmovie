@@ -9,7 +9,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>dbmovie</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ivan.imdb4douban</string>
+	<string>com.ivan.dbmovie</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -24,11 +24,7 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>imdb.js</string>
-			</array>
-			<key>Start</key>
-			<array>
-				<string>imdb.js</string>
+				<string>dbmovie.js</string>
 			</array>
 		</dict>
 	</dict>
@@ -42,8 +38,12 @@
 	<dict>
 		<key>Website Access</key>
 		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>movie.douban.com/subject</string>
+			</array>
 			<key>Level</key>
-			<string>All</string>
+			<string>Some</string>
 		</dict>
 	</dict>
 </dict>

@@ -20,7 +20,6 @@ function trans2readable(num){
 		if(!(/^[0123456789]*$/.test(num))){
 			num = num.replace(",","");
 			num = num.trim();
-			alert(num);
 		}
 		if(/^[0123456789]*$/.test(num)){
 			num = parseInt(num);
