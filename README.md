@@ -30,9 +30,11 @@
 请不吝提供你的建议或是好点子 :)
 
 ## History
-2015.02.09 哔哩哔哩在线观看，没有 Flash 用 Chrome 打开
+2015.02.09 
 
-(use [lhagan](https://github.com/lhagan) / **[Open-in-Chrome](https://github.com/lhagan/Open-in-Chrome)**)
+* 哔哩哔哩在线观看，没有 Flash 用 Chrome 打开
+* 没有 Flash 用 Chrome 打开预告片观看
+* based on [lhagan](https://github.com/lhagan) / **[Open-in-Chrome](https://github.com/lhagan/Open-in-Chrome)**
 
 2015.02.08 美化界面
 

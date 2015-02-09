@@ -107,7 +107,22 @@ if(location.pathname.indexOf("subject")!=-1){
 		myDiv.insertAdjacentHTML("beforeend",
 			"<p><a href='" + 
 			encodeURI("chromehelper://www.bilibili.com/search?keyword=" + db_title.split(" ")[0])
-			 + "' target='_blank'>在线 · 哔哩哔哩</a></p>"
+			 + "' target='_blank'>在线 · 哔哩哔哩</a><img src='http://static.hdslb.com/images/v2images/loading.gif' height='10'></p>"
 		);	
 	}
+	
+	if(!hasFlash){
+		var db_trailer = document.querySelector("a[href^='http://movie.douban.com/trailer/']");
+		/*
+		var db_trailer_div = document.querySelector("ul.related-pic-bd narrow");
+		if(!db_trailer && !db_trailer_div){
+			var ref = db_trailer.href.replace("http://", "chromehelper://");
+			db_trailer_div.insertAdjacentHTML("beforeend", "<a href='" + ref + "'>用 Chrome 打开预告片</a>");
+		}
+		*/
+		if(db_trailer != null){
+			db_trailer.href = db_trailer.href.replace("http://", "chromehelper://");
+		}
+	}
+
 }
